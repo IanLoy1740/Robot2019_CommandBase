@@ -4,6 +4,7 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
+
 #include "commands/GamePieceManipulatorManual.h"
 #include "subsystems/GamePieceManipulator.h"
 #include <frc/smartdashboard/SmartDashboard.h>
@@ -28,7 +29,8 @@ void GamePieceManipulatorManual::Execute() {
 
   gamePieceManipulator->Move(velocity);
   // Display arm/hinge position on the dashboard
-  frc::SmartDashboard::PutNumber("Hinge Angle", gamePieceManipulator->GetPosition());
+  frc::SmartDashboard::PutNumber("Left Hinge", gamePieceManipulator->GetLPosition());
+  frc::SmartDashboard::PutNumber("Right Hinge", gamePieceManipulator->GetRPosition());
 
 }
 
